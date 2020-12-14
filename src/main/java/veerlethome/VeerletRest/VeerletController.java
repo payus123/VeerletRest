@@ -11,7 +11,7 @@ public class VeerletController {
     @Autowired
     private VeerletService service;
 
-    @PostMapping
+    @PostMapping("/save")
     public void save(@RequestBody VeerletHomeModel veerletHomeModel){
 
         service.save(veerletHomeModel);
