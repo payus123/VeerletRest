@@ -3,7 +3,6 @@ package veerlethome.VeerletRest;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
 public class VeerletHomeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
