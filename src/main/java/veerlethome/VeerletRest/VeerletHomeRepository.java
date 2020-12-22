@@ -5,6 +5,6 @@ import org.springframework.security.core.userdetails.User;
 
 public interface VeerletHomeRepository extends JpaRepository<VeerletHomeModel,Integer> {
 
-    User findByUsername(String username);
+    VeerletHomeModel findByUsername(String username);
 }
 
