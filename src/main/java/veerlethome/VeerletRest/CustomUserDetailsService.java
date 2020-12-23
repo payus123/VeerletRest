@@ -15,7 +15,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private VeerletHomeRepository repository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-      VeerletHomeModel user=repository.findByUsername(username);
+      VeerletHomeModel user=repository.findByUserName(username);
       return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(), new ArrayList<>());
     }
 }
