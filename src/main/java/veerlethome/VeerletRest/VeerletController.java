@@ -1,13 +1,25 @@
 package veerlethome.VeerletRest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
+import veerlethome.VeerletRest.Models.AuthModel;
+import veerlethome.VeerletRest.Models.VeerletHomeModel;
+import veerlethome.VeerletRest.Secuirity.JWT_UTIL;
+import veerlethome.VeerletRest.Services.VeerletService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("users")
 public class VeerletController {
+     @Autowired
+    private JWT_UTIL jwt_util =new JWT_UTIL();
+     @Autowired
+     private AuthenticationManager authenticationManager;
+
+
     @Autowired
     private VeerletService service;
 
@@ -27,5 +39,17 @@ public class VeerletController {
 
         return  service.get(id);
     }
+    @PostMapping("/Login")
+     public String generateToken(@RequestBody AuthModel authModel) throws Exception{
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(authModel.getUsername(),authModel.getPassword())
+            );
+        }catch (Exception exception){
+            throw new Exception("Error");
+        }
+          String token= jwt_util.generateToken(authModel.getUsername());
+            return token;
+     }
 
 }

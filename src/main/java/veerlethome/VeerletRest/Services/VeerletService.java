@@ -1,7 +1,9 @@
-package veerlethome.VeerletRest;
+package veerlethome.VeerletRest.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import veerlethome.VeerletRest.Models.VeerletHomeModel;
+import veerlethome.VeerletRest.Repositories.VeerletHomeRepository;
 
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
 @Service
 public class VeerletService {
     @Autowired
-    public  VeerletHomeRepository repo;
+    public VeerletHomeRepository repo;
 
     public void save(VeerletHomeModel veerletHomeModel){
         repo.save(veerletHomeModel);

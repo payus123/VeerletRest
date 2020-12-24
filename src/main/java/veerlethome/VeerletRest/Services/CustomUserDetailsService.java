@@ -1,14 +1,15 @@
-package veerlethome.VeerletRest;
+package veerlethome.VeerletRest.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import veerlethome.VeerletRest.Models.VeerletHomeModel;
+import veerlethome.VeerletRest.Repositories.VeerletHomeRepository;
 
 import java.util.ArrayList;
 @Service

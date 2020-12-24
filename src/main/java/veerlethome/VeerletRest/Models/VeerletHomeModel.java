@@ -1,4 +1,4 @@
-package veerlethome.VeerletRest;
+package veerlethome.VeerletRest.Models;
 
 import javax.persistence.*;
 
