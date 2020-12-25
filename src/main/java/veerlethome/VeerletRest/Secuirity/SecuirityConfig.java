@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import veerlethome.VeerletRest.Services.CustomUserDetailsService;
 
-@EnableWebSecurity
+
 @Configuration
 public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
@@ -21,12 +21,12 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-      auth.parentAuthenticationManager(authenticationManagerBean()).userDetailsService(customUserDetailsService);
+      auth.userDetailsService(customUserDetailsService);
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/login").permitAll().anyRequest().authenticated();
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers("//login").permitAll().anyRequest().authenticated();
     }
 
     @Bean

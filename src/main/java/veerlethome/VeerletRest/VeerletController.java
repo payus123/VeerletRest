@@ -40,14 +40,14 @@ public class VeerletController {
 
         return  service.get(id);
     }
-    @PostMapping("login")
+    @PostMapping("/login")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authModel.getUsername(),authModel.getPassword())
             );
         }catch (Exception exception){
-            throw new Exception("Error");
+            throw new Exception("Error password");
         }
           String token= jwt_util.generateToken(authModel.getUsername());
             return token;
