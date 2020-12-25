@@ -22,8 +22,5 @@ public class CustomUserDetailsService implements UserDetailsService {
       VeerletHomeModel user=repository.findByUserName(username);
       return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(), new ArrayList<>());
     }
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
-    }
+
 }

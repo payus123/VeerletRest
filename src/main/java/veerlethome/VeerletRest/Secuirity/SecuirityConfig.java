@@ -7,6 +7,8 @@ import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import veerlethome.VeerletRest.Services.CustomUserDetailsService;
 
 public class SecuirityConfig extends WebSecurityConfigurerAdapter {
@@ -17,12 +19,17 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
       auth.userDetailsService(customUserDetailsService);
     }
+
+    @Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception{
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers("login").permitAll().anyRequest().authenticated();
+    }
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     public AuthenticationManager authenticationManager()throws Exception{
         return super.authenticationManagerBean();
     }
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/login").permitAll().anyRequest().authenticated();
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return NoOpPasswordEncoder.getInstance();
     }
 }
