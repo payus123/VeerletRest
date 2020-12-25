@@ -17,13 +17,14 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-      auth.userDetailsService(customUserDetailsService);
+      auth.parentAuthenticationManager(authenticationManagerBean()).userDetailsService(customUserDetailsService);
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("login").permitAll().anyRequest().authenticated();
     }
+    @Override
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     public AuthenticationManager authenticationManager()throws Exception{
         return super.authenticationManagerBean();
