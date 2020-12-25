@@ -16,6 +16,7 @@ import java.util.List;
 public class VeerletController {
      @Autowired
     private JWT_UTIL jwt_util =new JWT_UTIL();
+
      @Autowired
      private AuthenticationManager authenticationManager;
 
@@ -51,5 +52,6 @@ public class VeerletController {
           String token= jwt_util.generateToken(authModel.getUsername());
             return token;
      }
+
 
 }
