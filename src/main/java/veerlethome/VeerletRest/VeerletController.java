@@ -40,7 +40,7 @@ public class VeerletController {
 
         return  service.get(id);
     }
-    @PostMapping("/login")
+    @RequestMapping(value="/login",method = RequestMethod.POST)
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
         try {
             authenticationManager.authenticate(
