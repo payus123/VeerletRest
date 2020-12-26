@@ -3,6 +3,7 @@ package veerlethome.VeerletRest.Secuirity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -28,9 +29,9 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
         return NoOpPasswordEncoder.getInstance();
     }
 
-    /*@Override
+    @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET,"/list").permitAll().anyRequest().authenticated();
     }
 
 
@@ -39,6 +40,6 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationManager authenticationManagerBean()throws Exception{
         return super.authenticationManagerBean();
-    }*/
+    }
 
 }

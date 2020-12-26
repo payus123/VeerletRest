@@ -14,6 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping("users")
 public class VeerletController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
      @Autowired
     private JWT_UTIL jwt_util =new JWT_UTIL();
 
@@ -39,9 +42,11 @@ public class VeerletController {
         return  service.get(id);
     }
 
-   /* @PostMapping("login")
+   @PostMapping("login")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
-        try {
+
+
+       try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authModel.getUsername(),authModel.getPassword())
             );
@@ -50,7 +55,7 @@ public class VeerletController {
         }
           String token= jwt_util.generateToken(authModel.getUsername());
             return token;
-     }*/
+     }
 
 
 }
