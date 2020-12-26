@@ -23,21 +23,22 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
       auth.userDetailsService(customUserDetailsService);
     }
-
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
-    }
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
 
+    /*@Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception{
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
+    }
+
+
+
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean()throws Exception{
         return super.authenticationManagerBean();
-    }
+    }*/
 
 }
