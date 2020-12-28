@@ -28,8 +28,9 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/list");
+        web.ignoring().antMatchers("/users/list");
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -38,7 +39,8 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
+       // httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
+
     }
 
 
@@ -48,7 +50,6 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean()throws Exception{
         return super.authenticationManagerBean();
     }
-
 
 
 }
