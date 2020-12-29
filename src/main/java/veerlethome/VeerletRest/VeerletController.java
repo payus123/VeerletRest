@@ -45,13 +45,13 @@ public class VeerletController {
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
 
 
-       try {
+     /*  try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authModel.getUsername(),authModel.getPassword())
             );
         }catch (Exception exception){
             throw new Exception("Error password");
-        }
+        }/*/
           String token= jwt_util.generateToken(authModel.getUsername());
             return token;
      }
