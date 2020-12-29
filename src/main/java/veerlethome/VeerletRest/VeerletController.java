@@ -52,8 +52,8 @@ public class VeerletController {
         }catch (Exception exception){
             throw new Exception("Error password");
         }
-       return "hello world";
-         // String token= jwt_util.generateToken(authModel.getUsername());return token;
+
+          String token= jwt_util.generateToken(authModel.getUsername());return token;
      }
 
 
