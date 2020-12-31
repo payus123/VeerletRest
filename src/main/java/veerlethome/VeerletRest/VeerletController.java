@@ -42,7 +42,7 @@ public class VeerletController {
         return  service.get(id);
     }
 
-   @PostMapping("auth")
+   /*@PostMapping("auth")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
 
 
@@ -57,7 +57,7 @@ public class VeerletController {
 
          String token= jwt_util.generateToken(user);
         return token;
-     }
+     }*/
 
 
 }
