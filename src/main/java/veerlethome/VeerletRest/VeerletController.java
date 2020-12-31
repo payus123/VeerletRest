@@ -12,6 +12,7 @@ import veerlethome.VeerletRest.Services.VeerletService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/users")
 public class VeerletController {
 
     @Autowired
