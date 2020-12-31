@@ -28,7 +28,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/{id}");
+        web.ignoring().antMatchers("/auth");
     }
 
 
