@@ -15,8 +15,8 @@ import java.util.List;
 @RequestMapping("/users")
 public class VeerletController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+   /* @Autowired
+    private AuthenticationManager authenticationManager;*/
      @Autowired
     private JWT_UTIL jwt_util ;
 
