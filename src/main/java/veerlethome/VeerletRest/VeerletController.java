@@ -17,7 +17,7 @@ public class VeerletController {
     @Autowired
     private AuthenticationManager authenticationManager;
      @Autowired
-    private JWT_UTIL jwt_util =new JWT_UTIL();
+    private JWT_UTIL jwt_util ;
 
 
 
@@ -52,9 +52,10 @@ public class VeerletController {
         }catch (Exception exception){
             throw new Exception("Error password");
         }
+       String user = authModel.getUsername();
 
-         String token= jwt_util.generateToken(authModel.getUsername());
-       return token;
+         String token= jwt_util.generateToken(user);
+        return token;
      }
 
 
