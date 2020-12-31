@@ -17,8 +17,8 @@ public class VeerletController {
 
    /* @Autowired
     private AuthenticationManager authenticationManager;*/
-     @Autowired
-    private JWT_UTIL jwt_util ;
+   //  @Autowired
+  //  private ivate JWT_UTIL jwt_util ;
 
 
 
