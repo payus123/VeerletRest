@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/users")
 public class VeerletController {
 
-
+    @Autowired
     private AuthenticationManager authenticationManager;
 
 
