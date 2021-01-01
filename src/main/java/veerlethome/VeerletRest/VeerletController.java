@@ -1,12 +1,8 @@
 package veerlethome.VeerletRest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
-import veerlethome.VeerletRest.Models.AuthModel;
 import veerlethome.VeerletRest.Models.VeerletHomeModel;
-import veerlethome.VeerletRest.Secuirity.JWT_UTIL;
 import veerlethome.VeerletRest.Services.VeerletService;
 
 import java.util.List;
