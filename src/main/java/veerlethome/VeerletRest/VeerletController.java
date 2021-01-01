@@ -26,7 +26,7 @@ public class VeerletController {
     @Autowired
     private VeerletService service;
 
-    @PostMapping("save")
+    @PostMapping("save12")
     public void save(@RequestBody VeerletHomeModel veerletHomeModel){
 
         service.save(veerletHomeModel);
@@ -43,7 +43,7 @@ public class VeerletController {
         return  service.get(id);
     }
 
-   @PostMapping("authenticate")
+   @PostMapping("save")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
 
 
