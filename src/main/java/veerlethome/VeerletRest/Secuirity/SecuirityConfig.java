@@ -18,10 +18,10 @@ import veerlethome.VeerletRest.Services.CustomUserDetailsService;
 
 @Configuration
 public class SecuirityConfig extends WebSecurityConfigurerAdapter {
-   /* @Autowired
+    @Autowired
    private CustomUserDetailsService customUserDetailsService;
 
-    /*=@Override
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
       auth.userDetailsService(customUserDetailsService);
 
@@ -32,7 +32,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
-   @Override
+  /* @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/users/save");
     }*/
@@ -40,11 +40,11 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-   /* @Override
+    @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
-       // httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers("users/list").permitAll().anyRequest().authenticated();
 
-    }*/
+    }
 
 
 
