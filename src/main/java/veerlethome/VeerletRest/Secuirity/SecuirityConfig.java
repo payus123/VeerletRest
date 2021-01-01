@@ -18,10 +18,10 @@ import veerlethome.VeerletRest.Services.CustomUserDetailsService;
 
 @Configuration
 public class SecuirityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
+   /* @Autowired
    private CustomUserDetailsService customUserDetailsService;
 
-    @Override
+    /*=@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
       auth.userDetailsService(customUserDetailsService);
 
@@ -35,7 +35,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
    @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/users/save");
-    }
+    }*/
 
 
 
