@@ -32,19 +32,18 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
-  /* @Override
+   @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/users/save");
-    }*/
+        web.ignoring().antMatchers("/users/{id}");
+    }
 
 
 
-
-    @Override
+    /*@Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("users/list").permitAll().anyRequest().authenticated();
 
-    }
+    }*/
 
 
 
