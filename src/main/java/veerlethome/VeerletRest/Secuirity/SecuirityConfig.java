@@ -34,7 +34,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     }
    @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/users/save");
+        web.ignoring().antMatchers("/users/auth");
     }
 
 
@@ -44,15 +44,15 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception{
        // httpSecurity.csrf().disable().authorizeRequests().antMatchers("/list").permitAll().anyRequest().authenticated();
 
-    }
+    }*/
 
 
 
-    /*@Override
+    @Override
     @Bean
     public AuthenticationManager authenticationManagerBean()throws Exception{
         return super.authenticationManagerBean();
     }
-*/
+
 
 }
