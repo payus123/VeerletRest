@@ -43,7 +43,7 @@ public class VeerletController {
         return  service.get(id);
     }
 
-   @PostMapping("auth")
+   @PostMapping("save1")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
 
 
