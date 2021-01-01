@@ -15,10 +15,10 @@ import java.util.List;
 @RequestMapping("/users")
 public class VeerletController {
 
-    @Autowired
+
     private AuthenticationManager authenticationManager;
 
-    @Autowired
+
     private Jwt_util jwt_util;
 
 
@@ -43,7 +43,7 @@ public class VeerletController {
         return  service.get(id);
     }
 
-   @PostMapping("save1")
+   @PostMapping("authenticate")
      public String generateToken(@RequestBody AuthModel authModel) throws Exception{
 
 
