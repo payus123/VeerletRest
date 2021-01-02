@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class VeerletController {
+    private String token;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -56,13 +57,13 @@ public class VeerletController {
         }
        String user = authModel.getUsername();
 try{
-    String token= jwt_util.generateToken(user);
+     token= jwt_util.generateToken(user);
 
 
 }  catch (Exception e) {
     throw new Exception(e);
 }
-       return "token";
+       return token ;
     }
 
 
