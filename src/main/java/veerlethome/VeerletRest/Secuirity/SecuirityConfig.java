@@ -22,7 +22,7 @@ import veerlethome.VeerletRest.filter.Jwt_filter;
 @Configuration
 public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    Jwt_filter jwtFilter;
+    private Jwt_filter jwtFilter;
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
@@ -49,7 +49,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("users/auth").permitAll().anyRequest().authenticated().and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        ;
+
 
     }
 
