@@ -56,7 +56,7 @@ public class VeerletController {
         }
        String user = authModel.getUsername();
 try{
-    String token= jwt_util.generateToken(user);
+    String token= jwt_util.generateToken("love");
 
 
 }  catch (Exception e) {
