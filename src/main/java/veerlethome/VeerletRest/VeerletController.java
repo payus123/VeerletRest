@@ -55,10 +55,15 @@ public class VeerletController {
             throw new Exception("Error password");
         }
        String user = authModel.getUsername();
+try{
+    String token= jwt_util.generateToken(user);
 
-         String token= jwt_util.generateToken(user);
-        return token;
-     }
+
+}  catch (Exception e) {
+    throw new Exception(e);
+}
+       return "token";
+    }
 
 
 }
