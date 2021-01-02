@@ -56,8 +56,8 @@ public class VeerletController {
         }
        String user = authModel.getUsername();
 
-         //String token= jwt_util.generateToken(user);
-        return "token";
+         String token= jwt_util.generateToken(user);
+        return token;
      }
 
 
