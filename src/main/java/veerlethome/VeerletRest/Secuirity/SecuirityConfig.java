@@ -38,10 +38,10 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-   /*@Override
+   @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/users/auth");
-    }*/
+    }
 
 
     @Override
