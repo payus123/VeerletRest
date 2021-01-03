@@ -60,5 +60,9 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+  /*  @Bean
+  public Jwt_filter akpos() throws Exception{
+        return akpos();
+  }*/
 
 }
