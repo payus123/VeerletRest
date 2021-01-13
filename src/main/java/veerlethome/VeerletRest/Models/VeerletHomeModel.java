@@ -6,10 +6,13 @@ import javax.persistence.*;
 @Table(name = "Users")
 public class VeerletHomeModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
     private String password;
+    private String fullname;
+    private String email;
+    private String firebasePassword;
 
 
     public VeerletHomeModel(Integer id, String username, String password) {
@@ -19,6 +22,30 @@ public class VeerletHomeModel {
     }
 
     public VeerletHomeModel() {
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirebasePassword() {
+        return firebasePassword;
+    }
+
+    public void setFirebasePassword(String firebasePassword) {
+        this.firebasePassword = firebasePassword;
     }
 
     public Integer getId() {
