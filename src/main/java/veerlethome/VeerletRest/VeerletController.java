@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import veerlethome.VeerletRest.Models.AuthModel;
+import veerlethome.VeerletRest.Models.CheckUser;
 import veerlethome.VeerletRest.Models.VeerletHomeModel;
 import veerlethome.VeerletRest.Secuirity.Jwt_util;
 import veerlethome.VeerletRest.Services.VeerletService;
@@ -74,6 +75,13 @@ try{
     throw new Exception(e);
 }
        return token ;
+    }
+
+    @PostMapping("check")
+    public  Boolean checkUser(@RequestBody CheckUser checkUser){
+
+        return service.checkForUsername(checkUser);
+
     }
 
 
