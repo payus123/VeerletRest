@@ -22,6 +22,7 @@ public class VeerletService {
     public List<VeerletHomeModel> listAll(){
         return repo.findAll();
 
+
     }
     public VeerletHomeModel get(Integer id){
         return  repo.findById(id).get();

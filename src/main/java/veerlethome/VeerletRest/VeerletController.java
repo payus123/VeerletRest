@@ -1,5 +1,7 @@
 package veerlethome.VeerletRest;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -28,10 +30,11 @@ public class VeerletController {
     private VeerletService service;
 
     @PostMapping("save")
-    public void save(@RequestBody VeerletHomeModel veerletHomeModel){
+    public VeerletHomeModel save(@RequestBody VeerletHomeModel veerletHomeModel){
 
         service.save(veerletHomeModel);
 
+            return service.get(2);
 
     }
 
