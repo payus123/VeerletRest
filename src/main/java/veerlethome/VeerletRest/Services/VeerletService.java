@@ -39,7 +39,8 @@ public class VeerletService {
 
     public Boolean checkForUsername(CheckUser checkUser) {
         VeerletHomeModel veerletHomeModel = repo.findByUserName(checkUser.getUsername());
-        Boolean check = repo.existsById(veerletHomeModel.getId());
+        Boolean check = null;
+       check = repo.existsById(veerletHomeModel.getId());
 
 
         if (check == true) {
