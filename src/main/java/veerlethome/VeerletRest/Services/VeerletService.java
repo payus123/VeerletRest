@@ -13,9 +13,10 @@ public class VeerletService {
     @Autowired
     public VeerletHomeRepository repo;
 
-    public void save(VeerletHomeModel veerletHomeModel){
+    public VeerletHomeModel save(VeerletHomeModel veerletHomeModel){
         repo.save(veerletHomeModel);
 
+        return repo.findByUserName(veerletHomeModel.getUsername());
 
 
     }
