@@ -32,9 +32,14 @@ public class VeerletController {
     @PostMapping("save")
     public VeerletHomeModel save(@RequestBody VeerletHomeModel veerletHomeModel){
 
-       return service.save(veerletHomeModel);
+        try {
+            service.save(veerletHomeModel);
+        }catch (Exception e){
+
+        }
 
 
+        return service.jsoOject(veerletHomeModel);
 
     }
 

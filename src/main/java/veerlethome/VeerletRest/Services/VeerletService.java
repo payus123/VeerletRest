@@ -13,10 +13,9 @@ public class VeerletService {
     @Autowired
     public VeerletHomeRepository repo;
 
-    public VeerletHomeModel save(VeerletHomeModel veerletHomeModel){
+    public void save(VeerletHomeModel veerletHomeModel){
         repo.save(veerletHomeModel);
 
-        return repo.findByUserName(veerletHomeModel.getUsername());
 
 
     }
@@ -29,7 +28,11 @@ public class VeerletService {
         return  repo.findById(id).get();
     }
 
+ public VeerletHomeModel jsoOject(VeerletHomeModel veerletHomeModel){
 
+        return repo.findByUserName(veerletHomeModel.getUsername());
+
+}
 
 
 }
