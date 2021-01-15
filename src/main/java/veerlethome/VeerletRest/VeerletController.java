@@ -28,10 +28,10 @@ public class VeerletController {
     private VeerletService service;
 
     @PostMapping("save")
-    public VeerletHomeModel save(@RequestBody VeerletHomeModel veerletHomeModel){
+    public void save(@RequestBody VeerletHomeModel veerletHomeModel){
 
         service.save(veerletHomeModel);
-        return service.get(1);
+
 
     }
 
