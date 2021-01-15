@@ -41,10 +41,11 @@ public class VeerletService {
         VeerletHomeModel veerletHomeModel = repo.findByUserName(checkUser.getUsername());
         Boolean check = repo.existsById(veerletHomeModel.getId());
 
-        if (check == true) {
-            realcheck = true;
 
-        } else {
+        if (check == true) {
+            realcheck =true;
+
+        } else if (check!=true){
             realcheck = false;
         }
         return realcheck;
