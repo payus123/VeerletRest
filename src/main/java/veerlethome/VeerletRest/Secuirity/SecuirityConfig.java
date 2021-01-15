@@ -42,6 +42,7 @@ public class SecuirityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/users/auth");
         web.ignoring().antMatchers("/users/save");
+       web.ignoring().antMatchers("/users/check");
     }
 
 
