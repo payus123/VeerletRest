@@ -30,11 +30,11 @@ public class VeerletController {
     private VeerletService service;
 
     @PostMapping("save")
-    public VeerletHomeModel save(@RequestBody VeerletHomeModel veerletHomeModel){
+    public List <VeerletHomeModel> save(@RequestBody VeerletHomeModel veerletHomeModel){
 
         service.save(veerletHomeModel);
 
-            return service.get(2);
+            return service.listAll();
 
     }
 
