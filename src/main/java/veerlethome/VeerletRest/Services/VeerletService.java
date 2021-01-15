@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class VeerletService {
+    private Boolean realcheck;
     @Autowired
     public VeerletHomeRepository repo;
 
@@ -35,12 +36,17 @@ public class VeerletService {
         return repo.findByUserName(veerletHomeModel.getUsername());
 
     }
-public Boolean checkForUsername(CheckUser checkUser){
-        VeerletHomeModel veerletHomeModel =repo.findByUserName(checkUser.getUsername());
-    Boolean check = repo.existsById(veerletHomeModel.getId());
 
-        return check;
+    public Boolean checkForUsername(CheckUser checkUser) {
+        VeerletHomeModel veerletHomeModel = repo.findByUserName(checkUser.getUsername());
+        Boolean check = repo.existsById(veerletHomeModel.getId());
 
-}
+        if (check == true) {
+            realcheck = true;
 
+        } else {
+            realcheck = false;
+        }
+        return realcheck;
+    }
 }
